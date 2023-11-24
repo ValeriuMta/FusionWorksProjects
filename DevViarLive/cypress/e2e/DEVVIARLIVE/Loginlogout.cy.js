@@ -1,10 +1,10 @@
 import { IgnoreUncaughtException } from "../../../Support-errors/uncaught-exception.cy.js"
-
+import {mainUrl} from "../../../constants/constants.js"
 it('Testing login/logout', function() {
 
   IgnoreUncaughtException()
 
-    cy.visit('https://test.viar.live/')
+    cy.visit(mainUrl)
 
     cy.get("div[class='Header_nav-actions__fGRKS'] button:nth-child(1)").click()
   
