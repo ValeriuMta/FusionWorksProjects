@@ -27,6 +27,7 @@ cy.get('.MuiButton-root').click()
 //TAGS creation
 cy.contains('div.MuiButtonBase-root', "CMS").next().find("a.MuiMenuItem-root").contains("Tags").click()
 
+
 //click on create
 cy.get('a.MuiButton-root').click()
 
