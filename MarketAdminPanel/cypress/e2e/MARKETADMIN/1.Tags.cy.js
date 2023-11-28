@@ -27,7 +27,6 @@ cy.get('.MuiButton-root').click()
 //TAGS creation
 cy.contains('div.MuiButtonBase-root', "CMS").next().find("a.MuiMenuItem-root").contains("Tags").click()
 
-
 //click on create
 cy.get('a.MuiButton-root').click()
 
@@ -35,7 +34,7 @@ cy.get('a.MuiButton-root').click()
 const name = makeid(5)
 cy.get('#name').type(name)
 
-for ( let i = 0; i < 3; i++ ){
+for ( let i = 0; i < 2; i++ ){
 cy.get(`#translations\\[label_${i}\\]`).type(name)}
 
 cy.get('#slug').type(name)

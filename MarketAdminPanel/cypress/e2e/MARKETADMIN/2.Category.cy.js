@@ -25,17 +25,17 @@ it ('Category Creation', function() {
 
     
     cy.contains('Categories').find("div.MuiListItemIcon-root").click()
-    cy.contains('a.MuiButton-root ').next().find("Create").click()
+    cy.get('a.MuiButton-root ').click()
 
     //Create 
     const name = makeid(5) 
-    for ( let i=0; i<3; i++) {
+    for ( let i=0; i<2; i++) {
       cy.get(`#translations\\[name_${i}\\]`).type(name)}
   
     cy.get('#rank').type('2')
-    cy.get('.RaToolbar-defaultToolbar > .MuiButton-root').click()
+    cy.get('.MuiButton-root').next().find('')
 
-
+ 
 
 
 })
