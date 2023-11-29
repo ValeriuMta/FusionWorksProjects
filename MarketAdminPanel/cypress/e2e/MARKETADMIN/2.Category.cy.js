@@ -33,7 +33,7 @@ it ('Category Creation', function() {
       cy.get(`#translations\\[name_${i}\\]`).type(name)}
   
     cy.get('#rank').type('2')
-    cy.get('.MuiButton-root').next().find('')
+    cy.get('div.RaToolbar-defaultToolbar').contains("Save").click()
 
  
 
