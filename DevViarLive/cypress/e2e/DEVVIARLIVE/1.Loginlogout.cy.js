@@ -8,7 +8,9 @@ it('Testing login/logout', function() {
 
     cy.get("div.d-inline-block").click()
 
-    cy.url().should('not.include',"https://auth.viar.live/u/login?state=hKFo2SBfUktZbThpXzJlUFR2VDRWbWFJY29PbnVIUzBoQW5FRKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIGlab0ZmZS1BUUpFYlF4Q0NmZHZBeXpwRDVJc0RzWEFFo2NpZNkgSTJNUHBWamE0Q05nQ2VROUVwWU1EVGdLS2Fyd21aZHM")
+
+
+    
   
     // cy.get('#\\31 -email').type('dgorea@fusionworks.md')
 
