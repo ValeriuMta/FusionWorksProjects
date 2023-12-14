@@ -25,83 +25,48 @@ it ('Delivery Settings Creation', function() {
     cy.get('div.MuiAccordionDetails-root').contains('a.MuiMenuItem-root',"Delivery Settings").click()
     cy.get('div.MuiToolbar-root').contains('a.MuiButton-root',"Create").click()
     
-    // //Create 1 courier
-    // const name1 = makeName(5)
-    // cy.get('#name').type(name1)
-    // cy.get('#basePrice').type('25')
-    // cy.get('#settingType').click()
-    // cy.get('[data-value="COURIER"]').click()
-    // cy.get('.RaToolbar-defaultToolbar > .MuiButton-root').click()
+    //Create 1 courier
+    const name1 = makeName(5)
+    cy.get('#name').type(name1)
+    cy.get('#basePrice').type('25')
+    cy.get('#basePriceEnabled').click()
 
-    // cy.wait(1500)
+    //Distance
+    cy.get('#orderDistanceEnabled').click()
+    cy.get('span.RaSimpleFormIterator-action').eq(0).contains('button.MuiButton-root',"Add").click()
+    cy.get('#orderDistanceRanges\\.0\\.from').type(10)
+    cy.get('#orderDistanceRanges\\.0\\.to').type(20)
+    cy.get('#orderDistanceRanges\\.0\\.modifier').type(5)
 
-    // cy.get('[href="/deliverySettings"]').click()
-    // cy.get('a.MuiButton-root').click()
-    
-    // //Create 2 client
-    // const name = makeName(5)
-    // cy.get('#name').type(name)
-    // cy.get('#basePrice').type('25')
-    // cy.get('#settingType').click()
-    // cy.get('[data-value="CLIENT"]').click()
-    // cy.get('.RaToolbar-defaultToolbar > .MuiButton-root').click()
+    //Peak hours
+    cy.get('#peakHoursEnabled').click()
+    cy.get('span.RaSimpleFormIterator-action').eq(2).contains('button.MuiButton-root',"Add").click()
+    cy.get('#peakHours\\.0\\.modifier').type(12)
 
-    // cy.wait(1500)
+    //Order price modifiers
+    cy.get('#orderPriceEnabled').click()
+    cy.get('span.RaSimpleFormIterator-action').eq(4).contains('button.MuiButton-root',"Add").click()
+    cy.get('#orderPriceRanges\\.0\\.from').type(10)
+    cy.get('#orderPriceRanges\\.0\\.to').type(12)
+    cy.get('#orderPriceRanges\\.0\\.modifier').type(15)
 
-    // cy.get('[href="/deliverySettings"]').click()
-    // cy.get('a.MuiButton-root').click()
-    
+    cy.get('#settingType').click()
+    cy.get('li.MuiMenuItem-root').contains("Courier").click()
 
+    cy.get('button.MuiButton-root').contains("Save").click()
 
-    // //Create 1.1 courier with options 
-    // const name2 = makeName(5)
-    // cy.get('#name').type(name2)
-    // cy.get('#basePrice').type('25')
-    // cy.get('#basePriceEnabled').click()
-    // cy.get('#orderDistanceEnabled').click()
-    // cy.get("button[class='MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root button-add button-add-orderDistanceRanges css-16zittn']").click()
-
-    
-    // //Distance
-    // cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > section:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)').type(1)
-    // cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > section:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)').type(10)
-    // cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > section:nth-child(2) > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)').type(25)
-
-    // //Peak hours
-    // cy.get('#peakHoursEnabled').click()
-    // cy.get("button[class='MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root button-add button-add-peakHours css-16zittn']").click()
-    // cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > section:nth-child(2) > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)').type(13)
-
-
-    // //Order price modifiers
-    // cy.get('#orderPriceEnabled').click()
-    // cy.get("button[class='MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root button-add button-add-orderPriceRanges css-16zittn']").click()
-    // cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > section:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)').type('5')
-    // cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > section:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)').type('10')
-    // cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > section:nth-child(2) > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)').type('15')
 
     // cy.get('#settingType').click()
-    // cy.get('[data-value="CLIENT"]').click()
+    // cy.get('ul.MuiList-root').contains('li.MuiMenuItem-root',"Courier").click()
+    // cy.get('div.RaToolbar-defaultToolbar').contains('.MuiButton-root',"Save").click()
 
-    // cy.get('.RaToolbar-defaultToolbar > .MuiButton-root').click()
+    
 
 
-    //  //Order price modifiers 2
-    //  cy.get('a.MuiButton-root').click()
-    //  const name3 = makeName(5)
-    //  cy.get('#name').type(name3)
-    //  cy.get('#basePrice').type('25')
-    //  cy.get('#basePriceEnabled').click()
-    //  cy.get('#orderDistanceEnabled').click()
-    //  cy.get('#orderPriceEnabled').click()
 
-    //  cy.get("button[class='MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeSmall MuiButton-textSizeSmall MuiButtonBase-root button-add button-add-orderPriceRanges css-16zittn']").click()
-    //  cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > section:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)').type('5')
-    //  cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > section:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input:nth-child(1)').type('10')
-    //  cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > section:nth-child(2) > div:nth-child(3) > div:nth-child(2) > input:nth-child(1)').type('15')
-     
-    //  cy.get('#settingType').click()
-    //  cy.get('[data-value="COURIER"]').click()
-    //  cy.get('.RaToolbar-defaultToolbar > .MuiButton-root').click()
-     
-    })
+
+
+
+
+
+  })
