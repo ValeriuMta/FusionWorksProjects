@@ -19,6 +19,12 @@ cy.visit('https://market.stg.dely.io/')
 cy.get('div.user-button').click()
 cy.get('div.input-row').type('valera1@gmail.com')
 cy.get('.primary').click()
+cy.wait(1000)
+cy.get('div.input-row').type(10203040)
+cy.wait(1000)
+cy.get('.primary').click()
+
+cy.get('.input-search-global').type("DEJ")
 
 // cy.get('class.input-row').type()
 
