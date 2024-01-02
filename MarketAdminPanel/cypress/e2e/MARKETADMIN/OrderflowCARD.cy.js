@@ -24,7 +24,16 @@ cy.get('div.input-row').type(10203040)
 cy.wait(1000)
 cy.get('.primary').click()
 
-cy.get('.input-search-global').type("DEJ")
+cy.get('div.address-button-content').click()
+cy.get('#suggest').clear()
+cy.get('#suggest').type("Chisinau") 
+cy.get('a.p-menuitem-link').click()
+// cy.get('#input-search-global').type("DEJ")
+// cy.get('div.restaurant-box').click()
+// cy.get('app-add-item-button.active').first().click()
+// cy.get('button.cart-dropdown-btn').click()
+// cy.get('button.primary').click()
+
 
 // cy.get('class.input-row').type()
 
