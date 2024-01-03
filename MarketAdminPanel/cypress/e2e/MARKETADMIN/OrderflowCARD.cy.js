@@ -26,13 +26,25 @@ cy.get('.primary').click()
 
 cy.get('div.address-button-content').click()
 cy.get('#suggest').clear()
+cy.wait(1500)
 cy.get('#suggest').type("Chisinau") 
-cy.get('a.p-menuitem-link').click()
-// cy.get('#input-search-global').type("DEJ")
-// cy.get('div.restaurant-box').click()
-// cy.get('app-add-item-button.active').first().click()
-// cy.get('button.cart-dropdown-btn').click()
-// cy.get('button.primary').click()
+cy.get('ul.p-menu-list').contains('a.p-menuitem-link',"Chișinău, Moldova").click()
+cy.get('button.next-button').click()
+cy.get('div.action-box').find('button').eq(1).click()
+
+cy.get('#input-search-global').type("DEJ")
+cy.get('div.restaurant-box').click()
+cy.get('app-add-item-button.active').first().click()
+cy.get('button.cart-dropdown-btn').click()
+cy.get('button.primary').click()
+
+//check box
+cy.get('div.terms-container').find('input[type = "checkbox"]').check({ force: true })
+cy.get('div.margin-horizontal').find('button[type = "undefined"]').click()
+cy.wait(1000)
+cy.get('div.margin-horizontal').find('button[type = "undefined"]').click()
+cy.get(1000)
+cy.get('div.margin-horizontal').find('button[type = "undefined"]').click()
 
 
 // cy.get('class.input-row').type()
