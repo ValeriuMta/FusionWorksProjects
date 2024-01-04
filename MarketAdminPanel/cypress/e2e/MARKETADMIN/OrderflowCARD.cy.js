@@ -43,11 +43,9 @@ cy.get('div.terms-container').find('input[type = "checkbox"]').check({ force: tr
 cy.get('div.margin-horizontal').find('button[type = "undefined"]').click()
 cy.wait(1000)
 cy.get('div.margin-horizontal').find('button[type = "undefined"]').click()
-cy.get(1000)
-cy.get('div.margin-horizontal').find('button[type = "undefined"]').click()
+cy.get(1500)
+cy.get('app-button.col').find('button[type = "undefined"]').click()
 
-
-// cy.get('class.input-row').type()
 
 
 })
