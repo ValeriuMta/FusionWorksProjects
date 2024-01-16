@@ -12,7 +12,7 @@ function makeName(length) {
 }
 
 
-it ('Delivery Settings Creation', function() {
+it ('Courier Payout Policy Creation', function() {
 
     cy.visit('https://market-admin.stg.dely.io/')
     

@@ -1,6 +1,6 @@
 ///<reference types="cypress" />
 
-function makeid(length) {
+function makeName(length) {
   let result = '';
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const charactersLength = characters.length;
@@ -13,7 +13,7 @@ function makeid(length) {
 }
 
 
-it ('Delivery Settings Creation', function() {
+it ('Suppliers Creation', function() {
 
     cy.visit('https://market-admin.stg.dely.io/')
     
@@ -22,11 +22,16 @@ it ('Delivery Settings Creation', function() {
     cy.get('#mui-7').type('12345678')
     cy.get('.MuiButton-root').click()
 
+    //go to supplier tab
     cy.contains('a.MuiMenuItem-root',"Suppliers").click()
-    const name = makeid(5)
-    for ( let i=0; i<9; i++) {
-      cy.get(`translations\\[metaTitle_${i}\\]`) }
 
+    //click on create
+    cy.get('div.MuiToolbar-root').contains('a.MuiButton-root',"Create").click()
+
+    //General subtab flow
+    const name = makeName(5)
+    cy.get('#slug').type(name)
     
+
 
 })
