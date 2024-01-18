@@ -36,9 +36,9 @@ function makeName(length) {
       const name1 = makeName(5)
       cy.get('#orderId').type(name1)
       cy.get('#totalSum').type("211")
-      cy.get('#customer\\.\\firstName').type("TEsting")
-      cy.get('#customer.lastName').type("Mta")
-      cy.get('#customer.phoneNumber').type(+37390909090)
+      cy.get('#customer\\.firstName').type("TEsting")
+      cy.get('#customer\\.lastName').type("Mta")
+      cy.get('#customer\\.phoneNumber').type(+37390909090)
       cy.get('div.MuiFilledInput-root').find('button.MuiButtonBase-root').click()
 
 
