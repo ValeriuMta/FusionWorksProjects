@@ -14,7 +14,7 @@ function makeName(length) {
   }
   
   
-  it ('Suppliers Creation', function() {
+  it ('Delivery Settings Creation', function() {
     IgnoreUncaughtException()
       cy.visit('https://admin.msd.dely.io/login')
       
