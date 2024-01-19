@@ -33,10 +33,9 @@ it ('Suppliers Creation', function() {
     cy.get('#slug').type(name)
     
     //name
-    for (let i = 0; i < 1; i++){
-    cy.get(`input.translations[name_0]`)
+    cy.get('#translations[name_0]').type(name)
 
-    }
+    
 
 
 })
