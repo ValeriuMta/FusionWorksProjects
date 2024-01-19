@@ -46,7 +46,7 @@ function makeName(length) {
 
 
       const number = makeNumber(8)
-      cy.get('#phone').type( "+373", number)
+      cy.get('#phone').type('+373'+number)
 
 
 
@@ -54,6 +54,8 @@ function makeName(length) {
       cy.get('#firstName').type(name1)
       cy.get('#lastName').type(name1)
 
+      //SAVE
+      cy.get('div.RaToolbar-defaultToolbar').find('button.MuiButton-root').click()
 
       
 
