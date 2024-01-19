@@ -14,7 +14,7 @@ function makeName(length) {
   }
   
   
-  it ('Suppliers Creation', function() {
+  it ('Standart Delivery Settings Creation', function() {
     IgnoreUncaughtException()
       cy.visit('https://admin.msd.dely.io/login')
       
@@ -26,7 +26,22 @@ function makeName(length) {
       //choose organization
       cy.get('button.MuiButtonBase-root').contains("Test MD").click()
 
+      //click on Delivery Settings
+      cy.get('a.MuiMenuItem-root').contains("Delivery Settings").click()
 
+      //Click on create
+      cy.get('a.MuiButton-root').contains("Create").click()
+
+      //fill all the inputs
+      const name1 = makeName(5)
+      cy.get('#name').type(name1)
+
+      //base price
+      cy.get('#basePrice').type("10")
+      cy.get('#basePriceEnabled').click()
+
+      //click SAVE
+      cy.get('div.RaToolbar-defaultToolbar').find('button.MuiButton-root').click()
 
 
 
