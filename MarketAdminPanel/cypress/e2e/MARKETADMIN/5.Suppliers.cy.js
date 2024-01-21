@@ -33,7 +33,32 @@ it ('Suppliers Creation', function() {
     cy.get('#slug').type(name)
     
     //name
-    cy.get('#translations[name_0]').type(name)
+    cy.get('#translations\\[name_0\\]').type(name)
+    cy.get('#translations\\[name_1\\]').type(name)
+
+    cy.get('#deliverySettingsId').click()
+
+
+    cy.get('li.MuiMenuItem-root').contains("Standard Driver Price").click()
+
+    //courier payout policy
+    cy.get('#courierPayoutPolicyId').click()
+    cy.get('li.MuiMenuItem-root').contains("Default payout policy").click()
+
+    //status
+    cy.get('#status').click()
+    cy.get('li.MuiMenuItem-root').contains("OPEN").click()
+
+    cy.get('#rank').type(1)
+
+    cy.get('#launchDate').type("2024-01-21")
+
+    cy.get('button.MuiButton-root').contains("Save").click()
+
+
+    
+
+
 
     
 
