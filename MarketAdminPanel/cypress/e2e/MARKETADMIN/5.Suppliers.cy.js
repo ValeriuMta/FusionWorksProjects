@@ -53,7 +53,34 @@ it ('Suppliers Creation', function() {
 
     cy.get('#launchDate').type("2024-01-21")
 
-    cy.get('button.MuiButton-root').contains("Save").click()
+    //Branding
+
+    cy.get(`#tabheader-1`).click()
+
+    //Description
+    cy.get('div.ml-1r').find('div.MuiFilledInput-root').eq(2).type(name)
+    cy.get('div.ml-1r').find('div.MuiFilledInput-root').eq(3).type(name)
+
+    //Highlight
+    cy.get('div.ml-1r').find('div.MuiFilledInput-root').eq(4).type(name)
+    cy.get('div.ml-1r').find('div.MuiFilledInput-root').eq(5).type(name)
+    cy.get('#mui-component-select-tagIds').click()
+    cy.get('li.MuiMenuItem-root').contains("Pasta").click()
+
+    //Financial
+    cy.get('#cvrNumber').type(name)
+    cy.get('#bankAccount')
+    
+
+
+
+
+ 
+
+
+
+
+    // cy.get('button.MuiButton-root').contains("Save").click()
 
 
     
