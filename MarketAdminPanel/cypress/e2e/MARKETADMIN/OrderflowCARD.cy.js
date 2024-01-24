@@ -17,7 +17,7 @@ it ( 'Order flow payment with card', function (){
 cy.visit('https://market.stg.dely.io/')
 
 cy.get('div.user-button').click()
-cy.get('div.input-row').type('valeriu2@gmail.com')
+cy.get('div.input-row').type('valera1@gmail.com')
 cy.get('.primary').click()
 cy.wait(1000)
 cy.get('div.input-row').type(10203040)
