@@ -66,17 +66,14 @@ it ('Suppliers Creation', function() {
     cy.get('div.ml-1r').find('div.MuiFilledInput-root').eq(5).type(name)
     cy.get('#mui-component-select-tagIds').click()
     cy.get('li.MuiMenuItem-root').contains("Pasta").click()
+    cy.wait(1000)
+    cy.get('#tabheader-2').click()
+
 
     //Financial
     cy.get('#cvrNumber').type(name)
-    cy.get('#bankAccount')
+    // cy.get('#bankAccount')
     
-
-
-
-
- 
-
 
 
 
