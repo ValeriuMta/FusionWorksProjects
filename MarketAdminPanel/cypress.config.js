@@ -10,6 +10,7 @@ module.exports = defineConfig({
   
   viewportWidth: 1500,
   viewportHeight: 1100,
+  "experimentalSessionAndOrigin" : true
 
 });
 
