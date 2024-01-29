@@ -37,38 +37,30 @@ cy.get('div.restaurant-box').click()
 cy.get('app-add-item-button.active').first().click()
 cy.get('button.cart-dropdown-btn').click()
 cy.get('button.primary').click()
-cy.get(1000)
 
 
 //choose 3DS card
-cy.get('ng-untouched').contains("app-list-item-payment-card.ng-untouched").scrollIntoView
-// cy.wait(2000)
-// cy.get('.ng-untouched').find('div.payment-items').eq(1).click()
+cy.wait(2000)
+cy.get('.ng-untouched').find('div.payment-items').eq(1).click()
+cy.wait(1500)
 
-// //check box
-// cy.get('div.terms-container').find('input[type = "checkbox"]').check({ force: true })
-
-
-// cy.get('div.margin-horizontal').find('button[type = "undefined"]').click()
-// cy.wait(1000)
-// cy.get('div.margin-horizontal').find('button[type = "undefined"]').click()
-// cy.wait(1500)
-  
+//check box
+cy.get('div.terms-container').find('input[type = "checkbox"]').check({ force: true })
 
 
+cy.get('div.margin-horizontal').find('button[type = "undefined"]').click()
+cy.wait(1000)
+cy.get('div.margin-horizontal').find('button[type = "undefined"]').click()
 
-// cy.request('POST','https://market-api.stg.dely.io/order/65b292baa6235d0008c394f4/confirm')
-// .then((responce) =>{
-//   const redirectURL = responce.body.redirectURL;
-//   cy.visit(redirectURL);
+cy.wait(1500)
 
-//   cy.get('button.common-Button').contains("Complete authentication").click()
-
-// })
+cy.origin('https://hooks.stripe.com/3d_secure_2/hosted', () => {
+  // cy.visit('/3d_secure_2/hosted')
+  cy.get('div.ButtonGroup').contains('#test-source-authorize-3ds',"Complete").click()
+})
 
 // cy.wait(1500)
 // cy.get('app-button.col').find('button[type = "undefined"]').click()
-
 
 
 })
