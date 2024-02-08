@@ -52,15 +52,6 @@ cy.get('div.margin-horizontal').find('button[type = "undefined"]').click()
 cy.wait(1000)
 cy.get('div.margin-horizontal').find('button[type = "undefined"]').click()
 
-cy.wait(1500)
-
-cy.origin('https://hooks.stripe.com/3d_secure_2/hosted', () => {
-  // cy.visit('/3d_secure_2/hosted')
-  cy.get('div.ButtonGroup').contains('#test-source-authorize-3ds',"Complete").click()
-})
-
-// cy.wait(1500)
-// cy.get('app-button.col').find('button[type = "undefined"]').click()
 
 
 })

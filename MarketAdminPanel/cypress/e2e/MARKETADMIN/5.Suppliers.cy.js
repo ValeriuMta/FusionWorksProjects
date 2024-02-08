@@ -75,16 +75,9 @@ it ('Suppliers Creation', function() {
     // cy.get('#bankAccount')
     
 
-
-
     // cy.get('button.MuiButton-root').contains("Save").click()
 
 
-    
-
-
-
-    
 
 
 })
